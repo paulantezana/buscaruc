@@ -20,6 +20,8 @@ define('CERVICE_PATH', ROOT_DIR . '/src/Services');
 define('SESS_KEY','SkyId');
 define('SESS_ROLE','SkyData');
 
+define('APP_DEV',false);
+
 define('APP_NAME','BUSCA RUC');
 define('APP_AUTHOR','skynet');
 define('APP_DESCRIPTION','busqueda de ruc sunat');

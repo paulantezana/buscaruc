@@ -10,8 +10,8 @@ class Database
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         );
 
-        // $this->connection = new PDO('mysql:host=localhost;dbname=buscaruc_buscaruc', 'buscaruc', '*yU150rd', $options);
-        $this->connection = new PDO('mysql:host=localhost;dbname=ruc', 'root', '', $options);
+        $this->connection = new PDO('mysql:host=localhost;dbname=buscaruc_buscaruc', 'buscaruc', '*yU150rd', $options);
+        // $this->connection = new PDO('mysql:host=localhost;dbname=busca_ruc', 'root', '', $options);
         $this->connection->exec("SET CHARACTER SET UTF8");
     }
     public function getConnection()

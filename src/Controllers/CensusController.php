@@ -26,7 +26,10 @@ class CensusController extends Controller
     {
         $res = new Result();
         try {
-            $resCen = $this->censusscraping->dowloand();
+            $postData = file_get_contents('php://input');
+            $body = json_decode($postData, true);
+
+            $resCen = $this->censusscraping->dowloand($body);
             if (!$resCen->success) {
                 throw new Exception($resCen->message);
             }
@@ -49,6 +52,20 @@ class CensusController extends Controller
             }
 
             $res->message = $resCen->message;
+            $res->success = true;
+        } catch (Exception $e) {
+            $res->message = $e->getMessage();
+        }
+        echo json_encode($res);
+    }
+
+    public function clear(){
+        $res = new Result();
+        try {
+            $this->censusscraping->clear();
+            $this->censusFileModel->truncate();
+
+            $res->message = '';
             $res->success = true;
         } catch (Exception $e) {
             $res->message = $e->getMessage();
@@ -176,6 +193,38 @@ class CensusController extends Controller
             $res->success = true;
         } catch (Exception $e) {
             $this->connection->rollBack();
+            $res->message = $e->getMessage();
+        }
+        echo json_encode($res);
+    }
+
+    public function scandirWrapper(){
+        $res = new Result();
+        try {
+
+            $directory = scandir(ROOT_DIR . '/src/Services/Census/wrapper');
+
+            $res->view = $this->render('partials/finder.partial.php',[
+                'directory' => $directory,
+            ], '', true);
+            $res->success = true;
+        } catch (Exception $e) {
+            $res->message = $e->getMessage();
+        }
+        echo json_encode($res);
+    }
+
+    public function deleteFileWrapper(){
+        $res = new Result();
+        try {
+            $postData = file_get_contents('php://input');
+            $body = json_decode($postData, true);
+
+            unlink(ROOT_DIR . '/src/Services/Census/wrapper/' . $body['fileName']);
+
+            $res->message = 'Archivo elimnado';
+            $res->success = true;
+        } catch (Exception $e) {
             $res->message = $e->getMessage();
         }
         echo json_encode($res);

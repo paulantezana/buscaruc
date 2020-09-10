@@ -27,6 +27,9 @@ class Router
             } else if(URL === '/consultas/api.php') { // Solor para dar soporte a las antiguas versiones
                 $this->controller = 'Api1';
                 $this->method = 'oldApi';
+            } else if(URL === '/consultas/dni.php') { // Solor para dar soporte a las antiguas versiones
+                $this->controller = 'Api1';
+                $this->method = 'oldApiDni';
             } else {
                 $this->controller = 'Page';
             }

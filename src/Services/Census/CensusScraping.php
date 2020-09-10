@@ -10,12 +10,15 @@ class CensusScraping
     public function __construct()
     {
         $this->filePath = CENSUS_PATH . '/census.zip';
-        $this->fileUrl = 'http://www2.sunat.gob.pe/padron_reducido_ruc.zip';
-        // $this->fileUrl = 'https://assets.paulantezana.com/padron_reducido_ruc.zip';
+        if(APP_DEV){
+            $this->fileUrl = 'https://assets.paulantezana.com/padron_reducido_ruc.zip';
+        } else {
+            $this->fileUrl = 'http://www2.sunat.gob.pe/padron_reducido_ruc.zip';
+        }
         $this->fileData = CENSUS_PATH . '/files.json';
     }
 
-    public function dowloand()
+    public function dowloand($param = [])
     {
         $res = new Result();
         try {
@@ -29,17 +32,20 @@ class CensusScraping
                 throw new Exception('Could not open: ' . $this->filePath);
             }
 
-            $options = array(
-                CURLOPT_FILE        => $filePath,
-                CURLOPT_TIMEOUT     => 28800, // set this to 8 hours so we dont timeout on big files
-                CURLOPT_URL         => $this->fileUrl,
-                CURLOPT_USERAGENT   => '"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.11) Gecko/20071204 Ubuntu/7.10 (gutsy) Firefox/2.0.0.11',
-                CURLOPT_SSL_VERIFYHOST => false,
-                CURLOPT_SSL_VERIFYPEER => false
-            );
-
             $curl = curl_init();
-            curl_setopt_array($curl, $options);
+            curl_setopt($curl, CURLOPT_FILE, $filePath);
+            curl_setopt($curl, CURLOPT_TIMEOUT, 28800);
+            curl_setopt($curl, CURLOPT_URL, $this->fileUrl);
+            if(isset($param['enabledAgent']) && $param['enabledAgent'] == true){
+                curl_setopt($curl, CURLOPT_USERAGENT, '"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.11) Gecko/20071204 Ubuntu/7.10 (gutsy) Firefox/2.0.0.11');
+            }
+            if(isset($param['enabledVerifyHost'])){
+                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, $param['enabledVerifyHost']);
+            }
+            if(isset($param['enabledVerfyPer'])){
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, $param['enabledVerfyPer']);
+            }
+            
             curl_exec($curl);
             if (curl_errno($curl)) {
                 throw new Exception(curl_error($curl));
@@ -98,14 +104,25 @@ class CensusScraping
         return $res;
     }
 
+    public function clear(){
+        if(is_dir(CENSUS_PATH . '/files')){
+            $files = glob(CENSUS_PATH . '/files' . '/*.txt');
+            foreach($files as $file){
+                is_file(unlink($file));
+            }
+            rmdir(CENSUS_PATH . '/files');
+        }
+
+        mkdir(CENSUS_PATH . '/files');
+    }
+
     public function splitFile()
     {
         $res = new Result();
         try {
             $startTime = microtime(true);
 
-            deleteDir(CENSUS_PATH . '/files');
-            mkdir(CENSUS_PATH . '/files');
+            $this->clear();
 
             if (!is_file(CENSUS_PATH . '/padron_reducido_ruc.txt')) {
                 throw new Exception('The ' . $this->filePath . ' file was not found');
@@ -122,22 +139,24 @@ class CensusScraping
             $currentFile = null;
 
             while (!feof($filePath)) {
-                if ($counter > 0) {
-                    $textLine = fgets($filePath);
-                    if ($counter % 120000 === 0 || $counter === 1) {
-                        $newFilePath = CENSUS_PATH . '/files/file' . ($fileCounter + 1) . '.txt';
+                $textLine = fgets($filePath);
+                if($counter === 0){
+                    $counter++;
+                    continue;
+                }
+                if ($counter % 120000 === 0 || $counter === 1) {
+                    $newFilePath = CENSUS_PATH . '/files/file' . ($fileCounter + 1) . '.txt';
 
-                        if (gettype($currentFile) === 'resource') {
-                            fclose($currentFile);
-                        }
-
-                        $currentFile =  fopen($newFilePath, 'a');
-                        array_push($files, $newFilePath);
-                        $fileCounter++;
+                    if (gettype($currentFile) === 'resource') {
+                        fclose($currentFile);
                     }
 
-                    fwrite($currentFile, $textLine);
+                    $currentFile =  fopen($newFilePath, 'a');
+                    array_push($files, $newFilePath);
+                    $fileCounter++;
                 }
+
+                fwrite($currentFile, $textLine);
                 $counter++;
             }
             fclose($filePath);

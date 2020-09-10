@@ -46,4 +46,14 @@ SQLSTATE[HY000] [1045] Access denied for user 'buscaruc'@'localhost' (using pass
 #0 D:\local\buscaruc\src\Services\Database.php(13): PDO->__construct('mysql:host=loca...', 'buscaruc', '*yU150rd', Array)
 #1 D:\local\buscaruc\src\route.php(52): Database->__construct()
 #2 D:\local\buscaruc\index.php(12): Router->run()
+#3 {main}PHP Fatal error | URL : http://localhost/buscaruc/ | ERROR index : 
+SQLSTATE[HY000] [1045] Access denied for user 'buscaruc'@'localhost' (using password: YES)
+#0 D:\local\buscaruc\src\Services\Database.php(13): PDO->__construct('mysql:host=loca...', 'buscaruc', '*yU150rd', Array)
+#1 D:\local\buscaruc\src\route.php(55): Database->__construct()
+#2 D:\local\buscaruc\index.php(12): Router->run()
+#3 {main}PHP Fatal error | URL : http://localhost/buscaruc/ | ERROR index : 
+SQLSTATE[HY000] [1045] Access denied for user 'buscaruc'@'localhost' (using password: YES)
+#0 D:\local\buscaruc\src\Services\Database.php(13): PDO->__construct('mysql:host=loca...', 'buscaruc', '*yU150rd', Array)
+#1 D:\local\buscaruc\src\route.php(55): Database->__construct()
+#2 D:\local\buscaruc\index.php(12): Router->run()
 #3 {main}
