@@ -1,0 +1,21 @@
+.QuestionItem{
+    margin-bottom: 1rem;
+    border: 1px solid var(--skColorBorder);
+    padding: 1rem;
+    border-radius: 8px;
+    @include from(l){
+        display: grid;
+        grid-template-columns: 190px 1fr;
+        grid-gap: 1rem;
+    }
+    &-number{
+        font-weight: 500;
+        font-size: 1rem;
+        span{
+            color: var(--skColor1);
+        }
+    }
+    // &-content{
+    // }
+    
+}

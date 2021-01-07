@@ -1,0 +1,86 @@
+.CourseManage{
+    @include from(l){
+        display: flex;
+    }
+    &-nav{
+        @include from(l){
+            flex: 0 0 220px;
+            padding-right: 1rem;
+            border-right: 1px solid var(--skColorBorder);
+        }
+        @include to(l){
+            margin-bottom: 1rem;
+        }
+    }
+    &-header{
+        @include to(l){
+            flex-wrap: wrap;
+        }
+    }
+    &-content{
+        @include from(l){
+            padding-left: 1rem;
+            flex: 1 1 auto;
+        }
+    }
+}
+
+.CourseManageHeader{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-title{
+        font-size: 1.2rem;
+        text-transform: capitalize;
+    }
+    &-description{
+        margin: 0;
+        @include to(l){
+            margin-bottom: 1rem;
+        }
+    }
+    &-state{
+        padding: 0.2rem 0.6rem;
+        border-radius: 4px;
+        @include from(l){
+            margin-left: 3rem;
+        }
+        @include to(l){
+            width: 100%;
+            text-align: center;
+        }
+
+        &.borrador{
+            background: var(--gray);
+            color: white;
+        }
+        &.publico{
+            background: var(--success);
+            color: white;
+        }
+        &.privado{
+            background: var(--indigo);
+            color: white;
+        }
+        &.ninguna{
+            background: var(--warning);
+            color: white;
+        }
+    }
+}
+
+.CourseManageCard{
+    &-header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        align-items: flex-start;
+    }
+    &-title{
+        font-weight: bold;
+    }
+    &-content{
+
+    }
+}

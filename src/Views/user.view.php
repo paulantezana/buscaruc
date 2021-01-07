@@ -4,16 +4,16 @@
             <i class=" fas fa-list-ul SnMr-2"></i> <strong>USUARIOS</strong>
         </div>
         <div class="SnToolbar-right">
-            <div class="SnBtn jsUserAction" onclick="userToPrint()">
+            <div class="SnBtn jsUserAction" onclick="userToPrint()" title="Imprimir">
                 <i class="fas fa-print"></i>
             </div>
-            <div class="SnBtn jsUserAction" onclick="userToExcel()">
+            <div class="SnBtn jsUserAction" onclick="userToExcel()" title="Exportar">
                 <i class="fas fa-file-excel"></i>
             </div>
-            <div class="SnBtn jsUserAction" onclick="userList()">
+            <div class="SnBtn jsUserAction" onclick="userList()" title="Actualizar">
                 <i class="fas fa-sync-alt"></i>
             </div>
-            <div class="SnBtn primary jsUserAction" onclick="userShowModalCreate()">
+            <div class="SnBtn primary jsUserAction" onclick="userShowModalCreate()" title="Nuevo">
                 <i class="fas fa-plus SnMr-2"></i> Nuevo
             </div>
         </div>
@@ -94,6 +94,19 @@
                 </div>
                 <button type="submit" class="SnBtn primary block" id="userFormSubmit">Guardar</button>
             </form>
+        </div>
+    </div>
+</div>
+
+<div class="SnModal-wrapper" data-modal="userApiTokenModalForm">
+    <div class="SnModal" style="max-width: 800px;">
+        <div class="SnModal-close" data-modalclose="userApiTokenModalForm">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="SnModal-header"><i class="fas fa-folder-plus SnMr-2"></i> Usuario</div>
+        <div class="SnModal-body">
+            <div class="SnAlert success SnMb-2" id="tokenUrl"><?= HOST . URL_PATH ?>/api/v2</div>
+            <div id="tokenContainer" class="Console" style="overflow: auto; margin-bottom: 16px; font-size: 17px"></div>
         </div>
     </div>
 </div>

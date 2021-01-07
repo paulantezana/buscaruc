@@ -1,0 +1,16 @@
+// Header
+.AdminHeader{
+    height: $AdminLayoutHeaderHeight;
+    padding: 0 8px 0 0;
+    &-action{
+        line-height: $AdminLayoutHeaderHeight;
+        height: $AdminLayoutHeaderHeight;
+        padding: 0 16px;
+        border: 0;
+        cursor: pointer;
+        text-decoration: none;
+        &:focus{
+            outline: 0;
+        }
+    }
+}

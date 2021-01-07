@@ -1,0 +1,168 @@
+.CourseLearn{
+    display: grid;
+    grid-gap: 1rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+    margin-top: 1rem;
+    @include from(l){
+        grid-template-columns: 30% 1fr;
+    }
+    &-content{
+        background: var(--skColorBgAlt);
+    }
+    &-learn{
+        @include to(l){
+            grid-column: 1 / 1;
+            grid-row: 1 / 1;
+        }
+    }
+    &-resource{
+        background: var(--skColorDarker);
+        padding: 30px 15px;
+        color: var(--skColorDarkInverse);
+        h3{
+            text-align: center;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .btn{
+            width: 100%;
+        }
+    }
+}
+
+.CourseLearnClass{
+    margin-bottom: 2rem;
+    @include from(l){
+        padding: 1rem;
+        border: 1px solid var(--skColorBorder);
+        border-radius: 8px;
+    }
+    &-header{
+        margin-bottom: 1rem;
+    }
+    &-title{
+        font-size: 1.2rem;
+        font-weight: 500;
+        border-bottom: 2px solid var(--skColor1);
+        padding-bottom: .5rem;
+        strong{
+            color: var(--skColor1);
+        }
+    }
+    &-subTitle{
+        font-size: 0.875rem;
+        font-weight: 400;
+    }
+    &-content{
+        // margin-bottom: 1rem;
+    }
+}
+
+.CourseLearnGroup{
+    border: 1px solid var(--skColorBorder);
+    border-radius: 8px;
+    padding: 1rem;
+    &-title{
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin: 0;
+        color: var(--skColor1);
+        line-height: 2rem;
+        strong{
+            background: linear-gradient(-45deg, var(--skColor1) 50%, var(--skColor1Dark) 50%);
+            border-radius: 8px;
+            padding: .3rem;
+            margin-right: .5rem;
+            color: var(--skColor1Inverse);
+            font-size: 1rem;
+        }
+    }
+}
+
+.CourseList{
+    &-content{
+        border: 1px solid var(--skColorBorder);
+        border-radius: 8px;
+        margin: 1rem 0;
+        overflow: auto;
+    }
+}
+
+.CourseListItem{
+    border-bottom: 1px solid var(--skColorBorder);
+    &:last-child{
+        border-bottom: 0;
+    }
+    background: var(--skColorBgAlt);
+    &-header{
+        padding: 1rem;
+    }
+    &-title{
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin: 0;
+        // color: var(--skColor1);
+    }
+    &-body{
+        padding: 0 1rem 1rem;
+    }
+    &-contentList{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        a {
+            padding: .5rem 0;
+            display: block;
+            color: inherit;
+            &:hover{
+                text-decoration: none;
+            }
+            &.disabled{
+                pointer-events: none;
+                opacity: .5;
+            }
+        }
+    }
+}
+
+.CourseResource{
+    padding: 1rem;
+    border: 1px solid var(--skColorBorder);
+    border-radius: 8px;
+    margin: 1rem 0;
+    &-title{
+        font-size: 1rem;
+    }
+}
+
+///
+.CLContent{
+    &-subTitle,
+    &-title{
+        text-align: center;
+    }
+    &-grid{
+        list-style: none;
+        padding: 1rem 0;
+        margin: 0;
+
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fit,minmax(100px,120px));
+        justify-content: center;
+        li{
+            border: 1px solid var(--skColorBorder);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+    }
+}

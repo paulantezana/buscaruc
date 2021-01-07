@@ -1,0 +1,54 @@
+.QuestionCard{
+    border: 1px solid var(--skColorBorder);
+    border-radius: 4px;
+    background: var(--skColorBgAlt);;
+    &-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--skColorBorder);
+        padding: .3rem;
+        background-color: rgba(0,0,0,.01);
+    }
+    &-body{
+        padding: .8rem;
+    }
+    &-footer{
+        background: rgba(0,0,0,.05);
+        padding: .5rem;
+        display: flex;
+        align-items: center;
+    }
+    &-orderNumber{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    &-action{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.QuestionCardAddBtn{
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    border: 1px dashed var(--skColorBorder);
+    text-align: center;
+    background: var(--skColorBgAlt);
+    &:hover{
+        background: var(--skColorHover);
+    }
+}
+
+#pollFormWrapper{
+    background: var(--skColorBg);
+    padding: 0.5rem;
+    border: 1px dashed var(--skColorBorder);
+    margin-top: .5rem;
+    border-radius: 4px;
+    &:focus{
+        outline: 0;
+    }
+}

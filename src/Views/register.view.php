@@ -1,48 +1,42 @@
-<div class="Login">
-    <div class="SnCard">
-        <div class="SnCard-body">
-            <?php require_once __DIR__ . '/partials/alertMessage.php' ?>
-            <form action="" method="post" class="SnForm">
-                <div class="SnForm-item required">
-                    <label for="registerEmail" class="SnForm-label">Email</label>
-                    <div class="SnControl-wrapper">
-                        <i class="far fa-envelope SnControl-prefix"></i>
-                        <input type="email" class="SnForm-control SnControl" required id="registerEmail" name="register[email]" placeholder="Email">
-                    </div>
-                </div>
-                <div class="SnForm-item required">
-                    <label for="registerUserName" class="SnForm-label">Nombre de usuario</label>
-                    <div class="SnControl-wrapper">
-                        <i class="far fa-user SnControl-prefix"></i>
-                        <input type="text" class="SnForm-control SnControl" required id="registerUserName" name="register[userName]" placeholder="Nombre de usuario">
-                    </div>
-                </div>
-                <div class="SnForm-item required">
-                    <label for="registerFullName" class="SnForm-label">Nombre completo</label>
-                    <div class="SnControl-wrapper">
-                        <i class="far fa-user SnControl-prefix"></i>
-                        <input type="text" class="SnForm-control SnControl" required id="registerFullName" name="register[fullName]" placeholder="Nombre completo">
-                    </div>
-                </div>
-                <div class="SnForm-item required">
-                    <label for="registerPassword" class="SnForm-label">Contraseña</label>
-                    <div class="SnControl-wrapper">
-                        <i class="fas fa-key SnControl-prefix"></i>
-                        <input type="password" class="SnForm-control SnControl" id="registerPassword" name="register[password]" placeholder="Contraseña">
-                        <span class="SnControl-suffix far fa-eye togglePassword"></span>
-                    </div>
-                </div>
-                <div class="SnForm-item required">
-                    <label for="registerPasswordConfirm" class="SnForm-label">Confirmar contraseña</label>
-                    <div class="SnControl-wrapper">
-                        <i class="fas fa-key SnControl-prefix"></i>
-                        <input type="password" class="SnForm-control SnControl" id="registerPasswordConfirm" name="register[passwordConfirm]" placeholder="Confirmar contraseña">
-                        <span class="SnControl-suffix far fa-eye togglePassword"></span>
-                    </div>
-                </div>
-                <input type="submit" value="Registrarse" name="commit" class="SnBtn primary block SnMb-5">
-                <a href="<?= URL_PATH ?>/page/login" class="SnBtn block">Login</a>
-            </form>
+<div class="MainContainer">
+    <?php require_once __DIR__ . '/partials/alertMessage.php' ?>
+    <form action="" method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            </div>
+            <input type="email" class="form-control" placeholder="Correo electrónico" name="register[email]" aria-label="Correo electrónico" aria-describedby="registerEmail" required>
         </div>
-    </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Usuario" name="register[userName]" aria-label="Usuario" aria-describedby="userName" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Nombre completo" name="register[fullName]" aria-label="Nombre completo" aria-describedby="fullName" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="password" class="form-control" placeholder="Contraseña" name="register[password]" aria-label="Contraseña" aria-describedby="password">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="password" class="form-control" placeholder="Confirmar Contraseña" name="register[passwordConfirm] " aria-label="Confirmar Contraseña" aria-describedby="password" required>
+        </div>
+
+        <input type="submit" value="Registrarse" name="commit" class="btn btn-primary btn-block mb-3">
+        <a href="<?= URL_PATH ?>/page/login" class="btn btn-block">Login</a>
+    </form>
 </div>

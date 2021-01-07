@@ -31,7 +31,7 @@ function censusSetLoading(state, element) {
 
 function censusGetFiles() {
     SnFreeze.freeze({ selector: "#censusFilesWrapperContainer" });
-    RequestApi.fetch("/census/getFiles")
+    RequestApi.fetch("/admin/census/getFiles")
         .then((res) => {
             if (res.success) {
                 let censusFilesWrapperContainer = document.getElementById(
@@ -64,7 +64,7 @@ function censusDowloand(element) {
             option.enabledVerifyHost = document.getElementById('enabledVerifyHost').checked;
             option.enabledVerfyPer = document.getElementById('enabledVerfyPer').checked;
             
-            RequestApi.fetch("/census/dowloand",{
+            RequestApi.fetch("/admin/census/dowloand",{
                 method: "POST",
                 body: option,
             })
@@ -93,7 +93,7 @@ function censusUnZip(element) {
             "Esta acción descomprimirá el padrón en formato zip previamente descargado.",
         onOk() {
             censusSetLoading(true, element);
-            RequestApi.fetch("/census/unZip")
+            RequestApi.fetch("/admin/census/unZip")
                 .then((res) => {
                     if (res.success) {
                         SnMessage.success({ content: res.message });
@@ -113,13 +113,20 @@ function censusUnZip(element) {
 }
 
 function censusPrepare(element) {
+    
+    let option = {}
+    option.type = document.getElementById('enabledIsSql').checked ? 'sql' : 'plain';
+
     SnModal.confirm({
         title: "Esta seguro de preparar los datos?",
         content:
             "Esta acción dividirá en archivos independientes para optimizar la inserción en la base de datos.",
         onOk() {
             censusSetLoading(true, element);
-            RequestApi.fetch("/census/prepare")
+            RequestApi.fetch("/admin/census/prepare",{
+                method: "POST",
+                body: option,
+            })
                 .then((res) => {
                     if (res.success) {
                         SnMessage.success({ content: res.message });
@@ -155,7 +162,7 @@ function censusSetAllData() {
         content: "Esta acción insertara todos los datos a la base de datos.",
         onOk() {
             SnFreeze.freeze({ selector: "#censusFilesWrapperContainer" });
-            RequestApi.fetch("/census/getFilesIsNotProcess")
+            RequestApi.fetch("/admin/census/getFilesIsNotProcess")
                 .then((res) => {
                     if (res.success) {
                         censusSetAllDataProcess(res.result);
@@ -190,7 +197,32 @@ async function censusSetAllDataProcess(dataResult) {
 
 function censusSetDataItem(censusFileId){
     SnFreeze.freeze({ selector: "#censusFilesWrapperContainer" });
-    return RequestApi.fetch("/census/setData", {
+    let firstTime = document.getElementById('enabledFirstTime').checked;
+    return RequestApi.fetch("/admin/census/setData", {
+        method: "POST",
+        body: { censusFileId, firstTime: !firstTime },
+    })
+        .then((res) => {
+            if (res.success) {
+                SnMessage.success({ content: res.message });
+            } else {
+                SnModal.error({
+                    title: "Algo salió mal",
+                    content: res.message,
+                });
+            }
+            censusGetFiles();
+            return res;
+        })
+        .finally((e) => {
+            SnFreeze.unFreeze("#censusFilesWrapperContainer");
+            scandirWrapper();
+        });
+}
+
+function setQuery(censusFileId){
+    SnFreeze.freeze({ selector: "#censusFilesWrapperContainer" });
+    return RequestApi.fetch("/admin/census/setQuery", {
         method: "POST",
         body: { censusFileId },
     })
@@ -219,7 +251,33 @@ function censusClear(){
         content: "Esta acción limpiara los archivos divididos.",
         onOk() {
             SnFreeze.freeze({ selector: "#censusFilesWrapperContainer" });
-            RequestApi.fetch("/census/clear")
+            RequestApi.fetch("/admin/census/clear")
+                .then((res) => {
+                    if (res.success) {
+                        SnMessage.success({ content: res.message });
+                    } else {
+                        SnModal.error({
+                            title: "Algo salió mal",
+                            content: res.message,
+                        });
+                    }
+                    censusGetFiles();
+                })
+                .finally((e) => {
+                    SnFreeze.unFreeze("#censusFilesWrapperContainer");
+                    scandirWrapper();
+                });
+        }
+    });
+}
+
+function censusTruncate(){
+    SnModal.confirm({
+        title: "Limpiar DB y Archivos?",
+        content: "Esta acción limpiara la base de datos y los archivos divididos.",
+        onOk() {
+            SnFreeze.freeze({ selector: "#censusFilesWrapperContainer" });
+            RequestApi.fetch("/admin/census/truncate")
                 .then((res) => {
                     if (res.success) {
                         SnMessage.success({ content: res.message });
@@ -245,7 +303,7 @@ function censusSetDataByFile(){
         content: "....",
         onOk() {
             SnFreeze.freeze({ selector: "#censusHistoryWrapperContainer" });
-            RequestApi.fetch("/census/setDataByFile")
+            RequestApi.fetch("/admin/census/setDataByFile")
                 .then((res) => {
                     if (res.success) {
                         SnMessage.success({ content: res.message });
@@ -266,7 +324,7 @@ function censusSetDataByFile(){
 
 function scandirWrapper(){
     SnFreeze.freeze({ selector: "#scandirWrapper" });
-    RequestApi.fetch("/census/scandirWrapper")
+    RequestApi.fetch("/admin/census/scandirWrapper")
         .then((res) => {
             if (res.success) {
                 let scandirWrapper = document.getElementById('scandirWrapper');
@@ -288,7 +346,7 @@ function scandirWrapper(){
 
 function deleteFileWrapper(fileName){
     SnFreeze.freeze({ selector: "#scandirWrapper" });
-    return RequestApi.fetch("/census/deleteFileWrapper",{
+    return RequestApi.fetch("/admin/census/deleteFileWrapper",{
         method: 'POST',
         body: { fileName }
     })

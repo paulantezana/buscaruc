@@ -1,59 +1,140 @@
-PHP Fatal error | URL : http://localhost/php-mvc/ | ERROR index : 
-SQLSTATE[HY000] [1049] Unknown database 'rusc'
-#0 D:\local\php-mvc\src\Services\Database.php(14): PDO->__construct('mysql:host=loca...', 'root', '', Array)
-#1 D:\local\php-mvc\src\route.php(46): Database->__construct()
-#2 D:\local\php-mvc\index.php(7): Router->run()
-#3 {main}PHP Fatal error | URL : http://localhost/php-mvc/ | ERROR index : 
-SQLSTATE[HY000] [1049] Unknown database 'rusc'
-#0 D:\local\php-mvc\src\Services\Database.php(14): PDO->__construct('mysql:host=loca...', 'root', '', Array)
-#1 D:\local\php-mvc\src\route.php(46): Database->__construct()
-#2 D:\local\php-mvc\index.php(7): Router->run()
-#3 {main}PHP Fatal error | URL : http://localhost/php-mvc/ | ERROR index : 
-SQLSTATE[HY000] [1045] Access denied for user 'buscaruc'@'localhost' (using password: YES)
-#0 D:\local\php-mvc\src\Services\Database.php(14): PDO->__construct('mysql:host=loca...', 'buscaruc', 'bvTLG.^Sp?VW', Array)
-#1 D:\local\php-mvc\src\route.php(43): Database->__construct()
-#2 D:\local\php-mvc\index.php(7): Router->run()
-#3 {main}PHP Fatal error | URL : http://localhost/php-mvc/ | ERROR index : 
-SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
-
-#0 D:\local\php-mvc\src\Services\Database.php(15): PDO->__construct('mysql:host=loca...', 'root', '', Array)
-#1 D:\local\php-mvc\src\route.php(43): Database->__construct()
-#2 D:\local\php-mvc\index.php(7): Router->run()
-#3 {main}PHP Fatal error | URL : http://localhost/php-mvc/ | ERROR index : 
-SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
-
-#0 D:\local\php-mvc\src\Services\Database.php(15): PDO->__construct('mysql:host=loca...', 'root', '', Array)
-#1 D:\local\php-mvc\src\route.php(43): Database->__construct()
-#2 D:\local\php-mvc\index.php(7): Router->run()
-#3 {main}PHP Fatal error | URL : http://localhost/php-mvc/ | ERROR index : 
-SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
-
-#0 D:\local\php-mvc\src\Services\Database.php(15): PDO->__construct('mysql:host=loca...', 'root', '', Array)
-#1 D:\local\php-mvc\src\route.php(43): Database->__construct()
-#2 D:\local\php-mvc\index.php(7): Router->run()
-#3 {main}PHP Fatal error | URL : http://localhost/buscaruc/ | ERROR index : 
-SQLSTATE[HY000] [1045] Access denied for user 'buscaruc'@'localhost' (using password: YES)
-#0 D:\local\buscaruc\src\Services\Database.php(13): PDO->__construct('mysql:host=loca...', 'buscaruc', 'bvTLG.^Sp?VW', Array)
-#1 D:\local\buscaruc\src\route.php(51): Database->__construct()
-#2 D:\local\buscaruc\index.php(7): Router->run()
-#3 {main}PHP Fatal error | URL : http://localhost/skyacademy/ | ERROR index : 
-SQLSTATE[HY000] [1045] Access denied for user 'buscaruc'@'localhost' (using password: YES)
-#0 D:\local\buscaruc\src\Services\Database.php(13): PDO->__construct('mysql:host=loca...', 'buscaruc', '*yU150rd', Array)
-#1 D:\local\buscaruc\src\route.php(52): Database->__construct()
-#2 D:\local\buscaruc\index.php(12): Router->run()
-#3 {main}PHP Fatal error | URL : http://localhost/ | ERROR index : 
-SQLSTATE[HY000] [1045] Access denied for user 'buscaruc'@'localhost' (using password: YES)
-#0 D:\local\buscaruc\src\Services\Database.php(13): PDO->__construct('mysql:host=loca...', 'buscaruc', '*yU150rd', Array)
-#1 D:\local\buscaruc\src\route.php(52): Database->__construct()
-#2 D:\local\buscaruc\index.php(12): Router->run()
-#3 {main}PHP Fatal error | URL : http://localhost/buscaruc/ | ERROR index : 
-SQLSTATE[HY000] [1045] Access denied for user 'buscaruc'@'localhost' (using password: YES)
-#0 D:\local\buscaruc\src\Services\Database.php(13): PDO->__construct('mysql:host=loca...', 'buscaruc', '*yU150rd', Array)
-#1 D:\local\buscaruc\src\route.php(55): Database->__construct()
-#2 D:\local\buscaruc\index.php(12): Router->run()
-#3 {main}PHP Fatal error | URL : http://localhost/buscaruc/ | ERROR index : 
-SQLSTATE[HY000] [1045] Access denied for user 'buscaruc'@'localhost' (using password: YES)
-#0 D:\local\buscaruc\src\Services\Database.php(13): PDO->__construct('mysql:host=loca...', 'buscaruc', '*yU150rd', Array)
-#1 D:\local\buscaruc\src\route.php(55): Database->__construct()
-#2 D:\local\buscaruc\index.php(12): Router->run()
-#3 {main}
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+2PDOStatement::execute(): MySQL server has gone awayD:\local\buscaruc\src\Models\CensusFile.php27
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+2mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set()D:\local\buscaruc\src\Services\SendManager\EmailManager.php26
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84
+8Undefined index: HTTP_ACCEPTD:\local\buscaruc\src\Controllers\PageController.php84

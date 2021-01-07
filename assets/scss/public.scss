@@ -1,0 +1,59 @@
+@import 'util';
+
+$siteHeaderHeight: 70px;
+@import 'public/BasicLayout';
+@import 'public/SiteHeader';
+@import 'public/SiteMenu';
+@import 'public/SiteFooter';
+
+@import 'public/CourseLearn';
+@import 'public/User';
+@import 'public/CourseUrl';
+@import 'public/ContentComment';
+@import 'Question';
+
+.LoginCard{
+    margin: 4rem 1rem 1rem;
+    &-body{
+        max-width: 400px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+.CourseGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-gap: 1rem;
+}
+.CourseBanner{
+    &-img{
+        height: 300px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.CourseFilter{
+    border-bottom: 1px solid var(--skColorBorder);
+    &-content{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+        grid-gap: 1rem;
+        max-width: $maxWidth;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 1rem;
+    }
+}
+
+.SiteTite{
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: 500;
+    span{
+        color: var(--skColor1);
+    }
+}

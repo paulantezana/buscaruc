@@ -1,109 +1,105 @@
+<?php
+    $siteTitle = isset($parameter['siteTitle']) ? (APP_NAME . ' - ' .  $parameter['siteTitle']) : APP_NAME;
+    $siteDescription = isset($parameter['siteDescription']) ? $parameter['siteDescription'] : APP_DESCRIPTION;
+    $sitePoster = URL_PATH . (isset($parameter['sitePoster']) ? $parameter['sitePoster'] : '/assets/images/icon/144.png');
+?>
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><?= APP_NAME ?></title>
+        <meta name="description" content="<?= APP_DESCRIPTION ?>">
+        <link rel="shortcut icon" href="<?= URL_PATH ?>/assets/images/icon/144.png">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= APP_NAME ?></title>
-    <meta name="description" content="<?= APP_DESCRIPTION ?>">
-    <link rel="shortcut icon" href="<?= URL_PATH ?>/assets/images/icon/144.png">
+        <?php require_once(__DIR__ . '/manifest.partial.php') ?>
 
-    <?php require_once(__DIR__ . '/manifest.partial.php') ?>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?= URL_PATH ?>/assets/css/admin.css">
-    <link rel="stylesheet" href="<?= URL_PATH ?>/assets/css/nprogress.css">
-    <link rel="stylesheet" href="<?= URL_PATH ?>/assets/css/fontawesome.css">
+        <link rel="stylesheet" href="<?= URL_PATH ?>/assets/css/sedna.css">
+        <link rel="stylesheet" href="<?= URL_PATH ?>/assets/css/customBootstrap.css">
+        <link rel="stylesheet" href="<?= URL_PATH ?>/assets/css/fontawesome.css">
+        <link rel="stylesheet" href="<?= URL_PATH ?>/assets/css/nprogress.css">
+        <link rel="stylesheet" href="<?= URL_PATH ?>/assets/css/toastr.min.css">
+        <link rel="stylesheet" href="<?= URL_PATH ?>/assets/css/select2.min.css">
+        <link rel="stylesheet" href="<?= URL_PATH ?>/assets/css/style.css">
+        <link rel="stylesheet" href="<?= URL_PATH ?>/assets/css/admin.css">
 
-    <script src="<?= URL_PATH ?>/assets/script/helpers/sedna.js"></script>
-    <script src="<?= URL_PATH ?>/assets/script/helpers/theme.js"></script>
-    <script src="<?= URL_PATH ?>/assets/script/helpers/pristine.min.js"></script>
-    <script src="<?= URL_PATH ?>/assets/script/helpers/nprogress.js"></script>
-    <script src="<?= URL_PATH ?>/assets/script/helpers/conmon.js"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-</head>
-
-<body>
-    <div class="AdminLayout SnAdminL2" id="AdminLayout">
-        <div class="AdminLayout-header">
-            <header class="Header">
-                <div class="Header-left">
-                    <div id="AsideMenu-toggle"><i class="fas fa-bars"></i></div>
-                </div>
-                <div class="Header-right">
-                    <ul class="HeaderMenu">
-                        <li>
-                            <div class="HeaderMenu-profile Header-action">
-                                <div class="SnAvatar">
-                                    <img src="<?= URL_PATH ?>/assets/images/icon/144.png" alt="avatar">
-                                </div>
-                            </div>
-                            <ul>
-                                <li class="User-item SnMt-2 SnMb-2">
-                                    <a href="<?= URL_PATH ?>/user/profile" class="SnAvatar">
-                                        <img src="<?= URL_PATH ?>/assets/images/icon/144.png" alt="avatar">
-                                    </a>
-                                    <div>
-                                        <div class="User-title"><strong id="userTitleInfo"></strong></div>
-                                        <div class="User-description" id="userDescriptionInfo"></div>
-                                    </div>
-                                </li>
-                                <li class="divider"></li>
-                                <li class="SnMt-2"><a href="<?= URL_PATH ?>/user/profile"><i class="fas fa-user SnMr-2"></i>Perfil</a></li>
-                                <li class="SnMb-2"><a href="<?= URL_PATH ?>/page/logout"><i class="fas fa-sign-out-alt SnMr-2"></i>Cerrar sesión</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </header>
-        </div>
-        <div class="AdminLayout-main">
-            <?php echo $content ?>
-        </div>
-        <div class="AdminLayout-aside">
-            <div id="AsideMenu-wrapper" class="AsideMenu-wrapper">
-                <div class="AsideMenu-container">
-                    <div class="AsideHeader">
-                        <div class="Branding">
-                            <a href="<?= URL_PATH ?>" class="Branding-link">
-                                <img src="<?= URL_PATH ?>/assets/images/icon/144.png" alt="Logo" class="Branding-img">
-                                <span class="Branding-name"><?= APP_NAME ?></span>
+        <script src="<?= URL_PATH ?>/assets/script/helpers/sedna.js"></script>
+        <script src="<?= URL_PATH ?>/assets/script/helpers/pristine.min.js"></script>
+        <script src="<?= URL_PATH ?>/assets/script/helpers/nprogress.js"></script>
+        <script src="<?= URL_PATH ?>/assets/script/helpers/jquery.min.js"></script>
+        <script src="<?= URL_PATH ?>/assets/script/helpers/jquery.PrintArea.js"></script>
+        <script src="<?= URL_PATH ?>/assets/script/helpers/bootstrap.bundle.min.js"></script>
+        <script src="<?= URL_PATH ?>/assets/script/helpers/toastr.min.js"></script>
+        <script src="<?= URL_PATH ?>/assets/script/helpers/conmon.js"></script>
+    </head>
+    <body>
+        <div class="AdminLayout AdminLayoutL2" id="AdminLayout">
+            <div class="AdminLayout-header">
+                <header class="navbar navbar-expand-sm AdminHeader">
+                    <div id="AdminSidebar-toggle" class="AdminHeader-action">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="ml-auto d-flex align-items-center">
+                        <div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="UserDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-right: 0">
+                                <img src="<?= URL_PATH . '/assets/images/icon/144.png' ?>" alt="avatar" width="32px">
                             </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="UserDropdown">
+                                <a class="dropdown-item" href="<?= URL_PATH  . '/user/update/' . $_SESSION[SESS_KEY] ?>"><i class="fas fa-user-edit mr-2"></i>Mi Perfil</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="<?= URL_PATH ?>"><i class="fas fa-cog mr-2"></i>Home</a>
+                                <a class="dropdown-item" href="<?= URL_PATH . '/page/logout' ?>"><i class="fas fa-sign-out-alt mr-2"></i>Cerrar sesión</a>
+                            </div>
                         </div>
                     </div>
-                    <ul class="AsideMenu" id="AsideMenu">
-                        <li class="AsideMenu-divider">Principal</li>
+                </header>
+            </div>
+            <div class="AdminLayout-main">
+                <?php echo $content ?>
+            </div>
+            <aside class="AdminLayout-sidebar AdminSidebar-wrapper" id="AdminSidebar">
+                <div class="AdminSidebar-content">
+                    <div class="AdminSidebar-brand">
+                        <a href="<?= URL_PATH ?>/admin">
+                            <img src="<?= URL_PATH . '/assets/images/icon/144.png' ?>" alt="logo" width="48px" class="mr-2">
+                            <span class="AdminSidebar-brandName"><?= APP_NAME ?><span><?= APP_DESCRIPTION ?></span></span>
+                        </a>
+                    </div>
+                    <div class="AdminSidebar-header">
+
+                    </div>
+                    <ul class="AdminSidebar-menu">
+                        <li class="AdminSidebar-title">General</li>
+
                         <?php if (menuIsAuthorized('home')) : ?>
                             <li>
-                                <a href="<?= URL_PATH ?>/"><i class="fas fa-tachometer-alt AsideMenu-icon"></i><span>Inicio </span> </a>
+                                <a href="<?= URL_PATH ?>/admin"><i class="fas fa-tachometer-alt AsideMenu-icon"></i><span>Inicio</span> </a>
                             </li>
                         <?php endif; ?>
-                        <li class="AsideMenu-divider">Configuracion</li>
-                        <?php if (menuIsAuthorized(['usuario', 'rol'])) : ?>
+                        <?php if (menuIsAuthorized('home')) : ?>
                             <li>
-                                <a href="#"><i class="fas fa-toolbox AsideMenu-icon"></i><span>Mantenimiento</span></a>
-                                <ul>
-                                    <?php if (menuIsAuthorized('usuario')) : ?>
-                                        <li><a href="<?= URL_PATH ?>/user"><i class="far fa-dot-circle SnMr-2"></i>Usuarios</a></li>
-                                    <?php endif; ?>
-                                    <?php if (menuIsAuthorized('rol')) : ?>
-                                        <li><a href="<?= URL_PATH ?>/appAuthorization"><i class="far fa-dot-circle SnMr-2"></i>Roles</a></li>
-                                    <?php endif; ?>
-                                </ul>
+                                <a href="<?= URL_PATH ?>/admin/census"><i class="fas fa-barcode AsideMenu-icon"></i><span>Padron RUC</span> </a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if (menuIsAuthorized('usuario')) : ?>
+                            <li>
+                                <a href="<?= URL_PATH ?>/admin/user"><i class="fas fa-user AsideMenu-icon"></i><span>Usuarios</span></a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if (menuIsAuthorized('rol')) : ?>
+                            <li>
+                                <a href="<?= URL_PATH ?>/admin/appAuthorization"><i class="fas fa-user-tag AsideMenu-icon"></i><span>Roles</span></a>
                             </li>
                         <?php endif; ?>
                     </ul>
-                    <div class="AsideFooter">
-                        <div class="SnSwitch">
-                            <input class="SnSwitch-control" type="checkbox" id="themeMode">
-                            <label class="SnSwitch-label" for="themeMode"></label>
-                        </div>
-                    </div>
                 </div>
-            </div>
+            </aside>
+            <script src="<?= URL_PATH ?>/assets/script/adminLayout.js"></script>
         </div>
-    </div>
-    <script src="<?= URL_PATH ?>/assets/script/adminLayout.js"></script>
-</body>
-
+    </body>
 </html>

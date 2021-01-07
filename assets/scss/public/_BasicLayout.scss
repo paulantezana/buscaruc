@@ -1,0 +1,30 @@
+.SiteLayout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--skColorBgAlt);
+    &-header {
+        // Style
+        height: $siteHeaderHeight;
+        background: var(--skColorDarker);
+        color: var(--skColorDarkInverse);
+    }
+    &-footer{
+        margin-top: auto;
+    }
+    &-main{
+        .MainContainer{
+            max-width: $maxWidth;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem;
+        }
+    }
+}
+
+.SiteWelcome{
+    margin-left: 1rem;
+    @include to(l){
+        display: none;
+    }
+}

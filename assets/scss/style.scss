@@ -1,0 +1,85 @@
+:root{
+    --skColor1Lighter4: #FFF1F0;
+    --skColor1Lighter3: #FFDEDB;
+    --skColor1Lighter2: #F5AEAB;
+    --skColor1Lighter: #E87D7D;
+    --skColor1Light: #DB5358;
+    --skColor1: #CE2D37;
+    --skColor1Dark: #A81D2B;
+    --skColor1Darker: #82101F;
+    --snColor1Darker2: #5C0615;
+    --snColor1Darker3: #36030D;
+    --skColor1Inverse: #FFFFFF;
+
+   --skColorBg: #f5f5f5;
+   --skColorBgAlt: #ffffff;
+   --skColorHover: #0000000d;
+
+   --skColorText: #333333;
+   --skColorTextAlt: #ABABAB;
+
+   --skColorBorder: #DFE2E2;
+
+   --skColorDarkSmoother: #4f7087;
+   --skColorDarkSmooth: #3c5567;
+   --skColorDark: #2a3b47;
+   --skColorDarker: #22303a;
+   --skColorDarkest: #1a252d;
+   --skColorDarkInverse: #b6bcc0;
+}
+
+@import 'CustomToast';
+@import 'admin/Content';
+
+.empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #ABABAB;
+}
+
+.Result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    &-title{
+        margin: 1rem auto;
+        font-weight: 300;
+    }
+}
+
+@import "freeze";
+@import "QuizCard";
+
+video,
+img{
+    max-width: 100%;
+}
+
+
+.QuizQuestionAnswredGrid{
+    display: flex;
+    flex-wrap: wrap;
+    // display: grid;
+    // grid-gap: .3rem;
+    // grid-template-columns: repeat(auto-fit,minmax(20px,1fr));
+    &-item{
+        padding: .375rem .75rem;
+        border: 1px solid var(--skColorBorder);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+    // &-item.answered{
+
+    // }
+}

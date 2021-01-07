@@ -1,0 +1,6 @@
+#toast-container>div{
+    box-shadow: 0 0 12px rgba(#000000, .2);
+    &:hover{
+        box-shadow: 0 0 12px rgba(#000000, .5);
+    }
+}

@@ -1,0 +1,53 @@
+.SortableList{
+    &-item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        border: 1px solid var(--skColorBorder);
+        padding: 0.5rem;
+        @include to(l){
+            flex-wrap: wrap;
+        }
+        &.draggable--over{
+            opacity: .2;
+        }
+    }
+    &-left{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        @include to(l){
+            margin-bottom: .5rem;
+            width: 100%;
+        }
+    }
+    &-right{
+        display: flex;
+        align-items: center;
+        @include to(l){
+            justify-content: space-around;
+            width: 100%;
+        }
+    }
+    &-sortNumber{
+        height: 25px;
+        width: 25px;
+        border-radius: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        // background: var(--skColor1Light);
+        // color: var(--skColor1Inverse);
+    }
+    &-dividerVertical{
+        height: 1rem;
+        width: 1px;
+        background: var(--skColorBorder);
+        display: inline-block;
+        margin-right: .3rem;
+        margin-left: .3rem;
+    }
+}

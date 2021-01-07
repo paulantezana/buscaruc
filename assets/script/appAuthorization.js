@@ -5,7 +5,7 @@ let userRoleState = {
 function userRoleLoadAuthorities(userRoleId, content) {
   userRoleState.currentUserRoleId = userRoleId;
   SnFreeze.freeze({ selector: "#userRoleAuthTable" });
-  RequestApi.fetch("/appAuthorization/byUserRoleId", {
+  RequestApi.fetch("/admin/appAuthorization/byUserRoleId", {
     method: "POST",
     body: {
       userRoleId: userRoleId || 0,
@@ -55,7 +55,7 @@ function userRoleSaveAuthorization() {
   });
 
   SnFreeze.freeze({ selector: "#userRoleAuthTable" });
-  RequestApi.fetch("/appAuthorization/save", {
+  RequestApi.fetch("/admin/appAuthorization/save", {
     method: "POST",
     body: {
       authIds: enableAuth || [],
@@ -77,6 +77,9 @@ function userRoleSaveAuthorization() {
 document.addEventListener("DOMContentLoaded", () => {
   let userRoleId = document.getElementById("userRoleId");
   if (userRoleId) {
+    userRoleId.addEventListener('change',()=>{
+      userRoleLoadAuthorities(userRoleId.value, "");
+    })
     userRoleLoadAuthorities(userRoleId.value, "");
   }
 });
